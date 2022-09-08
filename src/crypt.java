@@ -32,6 +32,7 @@ public class crypt {
             String cOut = (String)(hex^key);
             String sOut = Integer.toHexString(cOut);
             out = out + sOut;
+            i++;
         }
         return out;
     }
