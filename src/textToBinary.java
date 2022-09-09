@@ -1,11 +1,34 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class textToBinary {
     public static void main(String[] args) {
+        try {
+            //DataOutputStream output = new DataOutputStream (new BufferedOutputStream(new FileOutputStream("siffror.txt")));
+            String filnamn = "info.txt";
+            FileWriter fw = new FileWriter(filnamn);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter utFil = new PrintWriter(bw);
+
+            int x;
+            Random r = new Random();
+
+            for (int i = 0 ; i < 1920*1080 ; i++) {
+                x = r.nextInt(0xffffff);
+                //output.writeInt(x);
+                utFil.println(x);
+            }
+
+            //output.close();
+            utFil.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // String s = infile.readline               //????
+        // int x = Integer.parseInt(s)
+        /*
         BufferedReader in = null;
         ArrayList<String> file = new ArrayList<>();
         String s = null;
@@ -22,6 +45,7 @@ public class textToBinary {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
 
     }
