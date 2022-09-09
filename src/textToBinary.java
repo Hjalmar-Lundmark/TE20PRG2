@@ -20,6 +20,7 @@ public class textToBinary {
                 utFil.println(x);
             }
 
+            utFil.flush();
             //output.close();
             utFil.close();
         } catch (IOException e) {
