@@ -1,4 +1,4 @@
-public class crypt {
+public class crypttest {
     public static void main(String[] args) {
         char m = 'H';
         char k = '(';
