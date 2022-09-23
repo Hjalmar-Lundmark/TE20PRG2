@@ -1,3 +1,5 @@
+package crypt;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -66,7 +68,7 @@ public class cryptModel {
 // Både fungerar helt och likadant just nu.
 
 /*
-public class cryptModel {
+public class crypt.cryptModel {
     static String filnamn = "meddelande.txt";
     static String meddelande;
     static String keyfilnamn = "key.txt";
