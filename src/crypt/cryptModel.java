@@ -1,16 +1,15 @@
 package crypt;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 
 public class cryptModel {
-    String filnamn = "meddelande.txt";
+    String filnamn = "cryptIn.txt";
     String meddelande;
-    String keyfilnamn = "key.txt";
+    String keyfilnamn = "cryptKey.txt";
     String key;
     String crypted;
+    String cryptOut = "cryptOut.txt";
 
     public void readTextFile() {
         FileReader fr = null;
@@ -53,11 +52,37 @@ public class cryptModel {
         return out;
     }
 
+    public String deEncrypt(String meddelande, String key) {
+        String out = "";
+        char keey = key.charAt(0);
+        for (int i = 0; i < meddelande.length(); i++) {
+            char cIn = meddelande.charAt(i);
+            char cOut = (char) (cIn^keey);
+            out = out + cOut;
+        }
+        return out;
+    }
+
+    public void writeCryptfileOut(String crypted) {
+        try {
+            String filnamn = cryptOut;
+            FileWriter fw = new FileWriter(filnamn);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter utFil = new PrintWriter(bw);
+
+            utFil.println(crypted);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         cryptModel test = new cryptModel();
 
         test.readTextFile();
         test.crypt();
+        test.writeCryptfileOut(test.crypted);
 
         System.out.println(test.crypted);
     }
