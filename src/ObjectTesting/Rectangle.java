@@ -4,6 +4,10 @@ public class Rectangle {
     private float l1 = 1.0f;
     private float w1 = 1.0f;
 
+    public Rectangle() {
+
+    }
+
     public Rectangle(float l1, float l2) {
         this.l1 = l1;
         this.w1 = l2;
@@ -29,7 +33,7 @@ public class Rectangle {
     public String toString() {
         return "Rectangle{" +
                 "l1=" + l1 +
-                ", l2=" + w1 +
+                ", w1=" + w1 +
                 '}';
     }
 
