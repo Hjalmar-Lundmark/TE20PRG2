@@ -50,12 +50,14 @@ public class dec1 {
         System.out.println("Klar");
         //find biggest in elf
         OptionalInt out = Arrays.stream(elf).max();
-        System.out.println(out);
+        int outInt = out.getAsInt();
+        System.out.println(outInt);
 
         //Part 2
-        IntStream qwerty = Arrays.stream(elf).sorted();
-        
-        System.out.println();
+        IntStream outStre = Arrays.stream(elf).sorted();
+        int[] outArray = outStre.toArray();
+        outInt += outArray[outArray.length-2] + outArray[outArray.length-3];
+        System.out.println(outInt);
     }
 
     public static String readTextFile2(String filnamn) {
