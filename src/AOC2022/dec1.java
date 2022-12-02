@@ -15,7 +15,7 @@ public class dec1 {
         int p = 0;
         int i = 0;
 
-        in = readFile("dec1.txt");
+        in = readFile("input/dec1.txt");
         while (true) {
             while (true) {
                 sting = "";

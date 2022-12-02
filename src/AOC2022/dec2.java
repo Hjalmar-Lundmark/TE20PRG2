@@ -1,8 +1,7 @@
 package AOC2022;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 public class dec2 {
     public static void main(String[] args) {
@@ -17,16 +16,13 @@ public class dec2 {
         //1 for Rock, 2 for Paper, and 3 for Scissors
         //0 if you lost, 3 if the round was a draw, and 6 if you won
 
-        full = readFile("dec2.txt");
+        full = readFile("input/dec2.txt");
 
         while (true) {
             line = "";
             for (int i = 0; i < 3; i++) {
                 line += full.charAt(start);
                 start++;
-            }
-            if (start > full.length()) {
-                break;
             }
 
             if (line.contains("A")) {
@@ -36,7 +32,7 @@ public class dec2 {
                 } else if (line.contains("Y")) {
                     points += 8;
                     pointsP2 += (1+3);
-                } else if (line.contains("Z")) {
+                } else {
                     points += 3;
                     pointsP2 += (2+6);
                 }
@@ -47,18 +43,18 @@ public class dec2 {
                 } else if (line.contains("Y")) {
                     points += 5;
                     pointsP2 += (2+3);
-                } else if (line.contains("Z")) {
+                } else {
                     points += 9;
                     pointsP2 += (3+6);
                 }
-            } else if (line.contains("C")) {
+            } else {
                 if (line.contains("X")) {
                     points += 7;
                     pointsP2 += 2;
                 } else if (line.contains("Y")) {
                     points += 2;
                     pointsP2 += (3+3);
-                } else if (line.contains("Z")) {
+                } else {
                     points += 6;
                     pointsP2 += (1+6);
                 }
@@ -91,6 +87,16 @@ public class dec2 {
             inFil.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        return meddelande;
+    }
+
+    public static String altReadFile(String filnamn) throws FileNotFoundException {
+        Scanner in = new Scanner(new File(filnamn));
+        String meddelande = "";
+        while (in.hasNext()) {
+            meddelande += in.nextLine();
+            meddelande += " ";
         }
         return meddelande;
     }
