@@ -24,7 +24,7 @@ public class dec2 {
                 line += full.charAt(start);
                 start++;
             }
-            if (start >= full.length()) {
+            if (start > full.length()) {
                 break;
             }
 
