@@ -10,6 +10,7 @@ public class dec2 {
         String full = "";
         String line = "";
         int start = 0;
+        int pointsP2 = 0;
         //A for Rock, B for Paper, and C for Scissors
         //X for Rock, Y for Paper, and Z for Scissors
         //Points:
@@ -28,30 +29,38 @@ public class dec2 {
                 break;
             }
 
-            //Something wrong with if/else????
             if (line.contains("A")) {
                 if (line.contains("X")) {
-                    points += 4;
+                    points += 4;        //part1
+                    pointsP2 += 3;      //part2
                 } else if (line.contains("Y")) {
                     points += 8;
+                    pointsP2 += (1+3);
                 } else if (line.contains("Z")) {
                     points += 3;
+                    pointsP2 += (2+6);
                 }
             } else if (line.contains("B")) {
                 if (line.contains("X")) {
                     points += 1;
+                    pointsP2 += 1;
                 } else if (line.contains("Y")) {
                     points += 5;
+                    pointsP2 += (2+3);
                 } else if (line.contains("Z")) {
                     points += 9;
+                    pointsP2 += (3+6);
                 }
             } else if (line.contains("C")) {
                 if (line.contains("X")) {
                     points += 7;
+                    pointsP2 += 2;
                 } else if (line.contains("Y")) {
                     points += 2;
+                    pointsP2 += (3+3);
                 } else if (line.contains("Z")) {
                     points += 6;
+                    pointsP2 += (1+6);
                 }
             }
             if (start >= full.length()) {
@@ -60,6 +69,7 @@ public class dec2 {
         }
 
         System.out.println(points);
+        System.out.println(pointsP2);
     }
 
     public static String readFile(String filnamn) {
