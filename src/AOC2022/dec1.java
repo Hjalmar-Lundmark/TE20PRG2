@@ -15,7 +15,7 @@ public class dec1 {
         int p = 0;
         int i = 0;
 
-        in = readTextFile2("dec1.txt");
+        in = readFile("dec1.txt");
         while (true) {
             while (true) {
                 sting = "";
@@ -60,7 +60,7 @@ public class dec1 {
         System.out.println(outInt);
     }
 
-    public static String readTextFile2(String filnamn) {
+    public static String readFile(String filnamn) {
         FileReader fr = null;
         String meddelande = "";
         String m2;
