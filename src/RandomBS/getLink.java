@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class getLink {
     public static void main(String[] args) throws IOException {
-        URL resource = new URL("http://localhost:3000/"); // https doesn't works, http works
+        URL resource = new URL("http://localhost:3000/"); // https doesn't work, http works
         Scanner scan = new Scanner(resource.openStream());
         /*
         HttpsURLConnection connection = (HttpsURLConnection)resource.openConnection();;
